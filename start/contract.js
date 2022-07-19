@@ -102,17 +102,54 @@ const initialize = () => {
     const contractAddress = "0x0000000000000000000000000000000000002070";
 
     var web3 = new Web3(window.ethereum);
+
+    /*
+    var web3 = new Web3(new Web3.providers.HttpProvider('https://rpc.tst.publicmint.io:8545/'))
     const contractRef = new web3.eth.Contract(
       contractABI, contractAddress);
+    const receipt = await contractRef.methods.withdrawWireInt(web3.utils.toWei("1"),
+      '0x0d63f952f267aa920b4b906d0c1821218aa0d1349df07efa2a8039626a8864b8').encodeABI();
 
+    const estGasFees = await contractRef.methods.withdrawWireInt(web3.utils.toWei("1", "gwei"), web3.utils.sha3('0x3f15742b0c318ada62cd4063aaea5262666154f643150c2c4284ce09861673eb')).estimateGas({ from: window.ethereum.selectedAddress })
+    console.log(`EstGasFees : ${estGasFees}`);
 
+    const transaction = {
+
+      from: "0x8F3cEA8ba0201104f3Fb733f50738892129f19e3",
+      to: contractAddress,
+      //'value': 0,
+      gas: estGasFees,
+      //maxFeePerGas: 1000000108,
+      //nonce: nonce,
+      //gasLimit: 70000,
+      data: receipt
+      // optional data field to send message or execute smart contract
+    };
+
+    const walletAccountPrivateKey1 = '8cc14c56d1a8b92424a0d772f2226df9bc86af9670ba7f2ff336443b3f94f63f';
+    web3.eth.accounts.signTransaction(transaction, walletAccountPrivateKey1).then(signed => {
+      var tran = web3.eth.sendSignedTransaction(signed.rawTransaction);
+      tran.on('confirmation', (confirmationNumber, receipt) => {
+        console.log('confirmation: ' + confirmationNumber);
+      });
+
+      tran.on('transactionHash', hash => {
+        console.log('hash');
+        console.log(hash);
+      });
+      tran.on('receipt', receipt => {
+        console.log('reciept');
+        console.log(receipt);
+      });
+      tran.on('error', console.error);
+    });
+  */
 
     const estGasFees = await contractRef.methods.withdrawWireInt(web3.utils.toWei("1", "gwei"), web3.utils.sha3('0x3f15742b0c318ada62cd4063aaea5262666154f643150c2c4284ce09861673eb')).estimateGas({ from: window.ethereum.selectedAddress })
     console.log(`EstGasFees : ${estGasFees}`);
     const receipt = await contractRef.methods.withdrawWireInt(web3.utils.toWei("1", "gwei"), web3.utils.sha3('0x3f15742b0c318ada62cd4063aaea5262666154f643150c2c4284ce09861673eb'))
       .send({ from: window.ethereum.selectedAddress, gas: estGasFees });
     console.log(`Receipt : ${JSON.stringify(receipt)}`);
-
   });
 
   MetaMaskClientCheck();
