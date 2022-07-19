@@ -24,7 +24,9 @@
   },
   "homepage": "",
   "dependencies": {
-    "@metamask/onboarding": "^1.0.1"
+    "@metamask/onboarding": "^1.0.1",
+    "web3": "^1.7.4",
+    "jquery": "^3.5.1"
   },
   "devDependencies": {
     "@metamask/eslint-config": "^2.0.0",

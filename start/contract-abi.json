@@ -1,0 +1,791 @@
+[
+      {
+            "type": "function",
+            "stateMutability": "view",
+            "payable": false,
+            "outputs": [
+                  {
+                        "type": "bytes32",
+                        "name": ""
+                  }
+            ],
+            "name": "feeTypeWireInt",
+            "inputs": [],
+            "constant": true
+      },
+      {
+            "type": "function",
+            "stateMutability": "view",
+            "payable": false,
+            "outputs": [
+                  {
+                        "type": "uint256",
+                        "name": "result"
+                  }
+            ],
+            "name": "calcCustodialPoolPerc",
+            "inputs": [
+                  {
+                        "type": "bytes32",
+                        "name": "custodialHash"
+                  },
+                  {
+                        "type": "uint256",
+                        "name": "amount"
+                  }
+            ],
+            "constant": true
+      },
+      {
+            "type": "function",
+            "stateMutability": "view",
+            "payable": false,
+            "outputs": [
+                  {
+                        "type": "string",
+                        "name": ""
+                  }
+            ],
+            "name": "name",
+            "inputs": [],
+            "constant": true
+      },
+      {
+            "type": "function",
+            "stateMutability": "nonpayable",
+            "payable": false,
+            "outputs": [],
+            "name": "setUSDCmaxWithdrawAllowed",
+            "inputs": [
+                  {
+                        "type": "uint256",
+                        "name": "max"
+                  }
+            ],
+            "constant": false
+      },
+      {
+            "type": "function",
+            "stateMutability": "nonpayable",
+            "payable": false,
+            "outputs": [
+                  {
+                        "type": "bool",
+                        "name": ""
+                  }
+            ],
+            "name": "permitWithdrawalUSDC",
+            "inputs": [
+                  {
+                        "type": "address",
+                        "name": "account"
+                  }
+            ],
+            "constant": false
+      },
+      {
+            "type": "function",
+            "stateMutability": "nonpayable",
+            "payable": false,
+            "outputs": [
+                  {
+                        "type": "bool",
+                        "name": ""
+                  }
+            ],
+            "name": "withdrawAchUS",
+            "inputs": [
+                  {
+                        "type": "uint256",
+                        "name": "amount"
+                  },
+                  {
+                        "type": "bytes32",
+                        "name": "ref"
+                  }
+            ],
+            "constant": false
+      },
+      {
+            "type": "function",
+            "stateMutability": "view",
+            "payable": false,
+            "outputs": [
+                  {
+                        "type": "bool",
+                        "name": ""
+                  }
+            ],
+            "name": "validateMaxPoolPercentageToWithdrawalUSDC",
+            "inputs": [
+                  {
+                        "type": "uint256",
+                        "name": "amountToWithdraw"
+                  }
+            ],
+            "constant": true
+      },
+      {
+            "type": "function",
+            "stateMutability": "view",
+            "payable": false,
+            "outputs": [
+                  {
+                        "type": "uint256",
+                        "name": ""
+                  }
+            ],
+            "name": "totalSupply",
+            "inputs": [],
+            "constant": true
+      },
+      {
+            "type": "function",
+            "stateMutability": "view",
+            "payable": false,
+            "outputs": [
+                  {
+                        "type": "uint256",
+                        "name": ""
+                  }
+            ],
+            "name": "getUSDCmaxPoolPercentage",
+            "inputs": [],
+            "constant": true
+      },
+      {
+            "type": "function",
+            "stateMutability": "nonpayable",
+            "payable": false,
+            "outputs": [
+                  {
+                        "type": "bool",
+                        "name": ""
+                  }
+            ],
+            "name": "deposit",
+            "inputs": [
+                  {
+                        "type": "address",
+                        "name": "account"
+                  },
+                  {
+                        "type": "uint256",
+                        "name": "amount"
+                  },
+                  {
+                        "type": "bytes32",
+                        "name": "ref"
+                  }
+            ],
+            "constant": false
+      },
+      {
+            "type": "function",
+            "stateMutability": "nonpayable",
+            "payable": false,
+            "outputs": [],
+            "name": "initializeV2",
+            "inputs": [
+                  {
+                        "type": "address",
+                        "name": "custodial"
+                  }
+            ],
+            "constant": false
+      },
+      {
+            "type": "function",
+            "stateMutability": "pure",
+            "payable": false,
+            "outputs": [
+                  {
+                        "type": "uint8",
+                        "name": ""
+                  }
+            ],
+            "name": "decimals",
+            "inputs": [],
+            "constant": true
+      },
+      {
+            "type": "function",
+            "stateMutability": "view",
+            "payable": false,
+            "outputs": [
+                  {
+                        "type": "address",
+                        "name": ""
+                  }
+            ],
+            "name": "custodialImplementation",
+            "inputs": [],
+            "constant": true
+      },
+      {
+            "type": "function",
+            "stateMutability": "view",
+            "payable": false,
+            "outputs": [
+                  {
+                        "type": "bytes32",
+                        "name": ""
+                  }
+            ],
+            "name": "feeTypeAchUS",
+            "inputs": [],
+            "constant": true
+      },
+      {
+            "type": "function",
+            "stateMutability": "view",
+            "payable": false,
+            "outputs": [
+                  {
+                        "type": "uint256",
+                        "name": ""
+                  }
+            ],
+            "name": "estimateCosts",
+            "inputs": [
+                  {
+                        "type": "bytes4",
+                        "name": "sig"
+                  },
+                  {
+                        "type": "uint256",
+                        "name": "amount"
+                  }
+            ],
+            "constant": true
+      },
+      {
+            "type": "function",
+            "stateMutability": "pure",
+            "payable": false,
+            "outputs": [
+                  {
+                        "type": "uint256",
+                        "name": ""
+                  }
+            ],
+            "name": "version",
+            "inputs": [],
+            "constant": true
+      },
+      {
+            "type": "function",
+            "stateMutability": "view",
+            "payable": false,
+            "outputs": [
+                  {
+                        "type": "bytes32",
+                        "name": ""
+                  }
+            ],
+            "name": "feeTypeWireUS",
+            "inputs": [],
+            "constant": true
+      },
+      {
+            "type": "function",
+            "stateMutability": "view",
+            "payable": false,
+            "outputs": [
+                  {
+                        "type": "bool",
+                        "name": ""
+                  }
+            ],
+            "name": "validateMaxPoolToWithdrawal",
+            "inputs": [
+                  {
+                        "type": "uint256",
+                        "name": "amountToWithdraw"
+                  }
+            ],
+            "constant": true
+      },
+      {
+            "type": "function",
+            "stateMutability": "view",
+            "payable": false,
+            "outputs": [
+                  {
+                        "type": "uint256",
+                        "name": ""
+                  }
+            ],
+            "name": "balanceOf",
+            "inputs": [
+                  {
+                        "type": "address",
+                        "name": "account"
+                  }
+            ],
+            "constant": true
+      },
+      {
+            "type": "function",
+            "stateMutability": "view",
+            "payable": false,
+            "outputs": [
+                  {
+                        "type": "uint256",
+                        "name": ""
+                  }
+            ],
+            "name": "getUSDCmaxWithdrawAllowed",
+            "inputs": [],
+            "constant": true
+      },
+      {
+            "type": "function",
+            "stateMutability": "nonpayable",
+            "payable": false,
+            "outputs": [
+                  {
+                        "type": "bool",
+                        "name": ""
+                  }
+            ],
+            "name": "depositFromUSDC",
+            "inputs": [
+                  {
+                        "type": "address",
+                        "name": "account"
+                  },
+                  {
+                        "type": "uint256",
+                        "name": "amount"
+                  },
+                  {
+                        "type": "bytes32",
+                        "name": "ref"
+                  }
+            ],
+            "constant": false
+      },
+      {
+            "type": "function",
+            "stateMutability": "nonpayable",
+            "payable": false,
+            "outputs": [
+                  {
+                        "type": "bool",
+                        "name": ""
+                  }
+            ],
+            "name": "withdrawToUSDC",
+            "inputs": [
+                  {
+                        "type": "uint256",
+                        "name": "amount"
+                  },
+                  {
+                        "type": "string",
+                        "name": "targetAccount"
+                  },
+                  {
+                        "type": "int256",
+                        "name": "chainId"
+                  }
+            ],
+            "constant": false
+      },
+      {
+            "type": "function",
+            "stateMutability": "view",
+            "payable": false,
+            "outputs": [
+                  {
+                        "type": "string",
+                        "name": ""
+                  }
+            ],
+            "name": "symbol",
+            "inputs": [],
+            "constant": true
+      },
+      {
+            "type": "function",
+            "stateMutability": "view",
+            "payable": false,
+            "outputs": [
+                  {
+                        "type": "uint256",
+                        "name": "balance_"
+                  },
+                  {
+                        "type": "string",
+                        "name": "symbol_"
+                  }
+            ],
+            "name": "balanceOfAndSymbol",
+            "inputs": [
+                  {
+                        "type": "address",
+                        "name": "account"
+                  }
+            ],
+            "constant": true
+      },
+      {
+            "type": "function",
+            "stateMutability": "nonpayable",
+            "payable": false,
+            "outputs": [],
+            "name": "setUSDCmaxPoolPercentage",
+            "inputs": [
+                  {
+                        "type": "uint256",
+                        "name": "perc"
+                  }
+            ],
+            "constant": false
+      },
+      {
+            "type": "function",
+            "stateMutability": "nonpayable",
+            "payable": false,
+            "outputs": [
+                  {
+                        "type": "bool",
+                        "name": ""
+                  }
+            ],
+            "name": "withdrawWireInt",
+            "inputs": [
+                  {
+                        "type": "uint256",
+                        "name": "amount"
+                  },
+                  {
+                        "type": "bytes32",
+                        "name": "ref"
+                  }
+            ],
+            "constant": false
+      },
+      {
+            "type": "function",
+            "stateMutability": "view",
+            "payable": false,
+            "outputs": [
+                  {
+                        "type": "address",
+                        "name": ""
+                  }
+            ],
+            "name": "getERC20storage",
+            "inputs": [],
+            "constant": true
+      },
+      {
+            "type": "function",
+            "stateMutability": "view",
+            "payable": false,
+            "outputs": [
+                  {
+                        "type": "bytes32",
+                        "name": ""
+                  }
+            ],
+            "name": "feeTypeUSDC",
+            "inputs": [],
+            "constant": true
+      },
+      {
+            "type": "function",
+            "stateMutability": "nonpayable",
+            "payable": false,
+            "outputs": [
+                  {
+                        "type": "bool",
+                        "name": ""
+                  }
+            ],
+            "name": "forbidWithdrawalUSDC",
+            "inputs": [
+                  {
+                        "type": "address",
+                        "name": "account"
+                  }
+            ],
+            "constant": false
+      },
+      {
+            "type": "function",
+            "stateMutability": "nonpayable",
+            "payable": false,
+            "outputs": [
+                  {
+                        "type": "bool",
+                        "name": ""
+                  }
+            ],
+            "name": "withdrawWireUS",
+            "inputs": [
+                  {
+                        "type": "uint256",
+                        "name": "amount"
+                  },
+                  {
+                        "type": "bytes32",
+                        "name": "ref"
+                  }
+            ],
+            "constant": false
+      },
+      {
+            "type": "function",
+            "stateMutability": "view",
+            "payable": false,
+            "outputs": [
+                  {
+                        "type": "bool",
+                        "name": ""
+                  }
+            ],
+            "name": "checkPermissionsWithdrawalToUSDC",
+            "inputs": [
+                  {
+                        "type": "address",
+                        "name": "account"
+                  }
+            ],
+            "constant": true
+      },
+      {
+            "type": "function",
+            "stateMutability": "pure",
+            "payable": false,
+            "outputs": [
+                  {
+                        "type": "bytes32",
+                        "name": "permitHash"
+                  }
+            ],
+            "name": "genPermitWithdrawalUSDC",
+            "inputs": [
+                  {
+                        "type": "address",
+                        "name": "account"
+                  }
+            ],
+            "constant": true
+      },
+      {
+            "type": "function",
+            "stateMutability": "pure",
+            "payable": false,
+            "outputs": [
+                  {
+                        "type": "address",
+                        "name": ""
+                  }
+            ],
+            "name": "getGasManager",
+            "inputs": [],
+            "constant": true
+      },
+      {
+            "type": "constructor",
+            "stateMutability": "nonpayable",
+            "payable": false,
+            "inputs": []
+      },
+      {
+            "type": "event",
+            "name": "Deposit",
+            "inputs": [
+                  {
+                        "type": "address",
+                        "name": "to",
+                        "indexed": true
+                  },
+                  {
+                        "type": "uint256",
+                        "name": "amount",
+                        "indexed": false
+                  },
+                  {
+                        "type": "bytes32",
+                        "name": "ref",
+                        "indexed": true
+                  },
+                  {
+                        "type": "bytes32",
+                        "name": "custodial",
+                        "indexed": true
+                  }
+            ],
+            "anonymous": false
+      },
+      {
+            "type": "event",
+            "name": "Withdraw",
+            "inputs": [
+                  {
+                        "type": "address",
+                        "name": "from",
+                        "indexed": true
+                  },
+                  {
+                        "type": "uint256",
+                        "name": "amount",
+                        "indexed": false
+                  },
+                  {
+                        "type": "bytes32",
+                        "name": "ref",
+                        "indexed": true
+                  },
+                  {
+                        "type": "bytes32",
+                        "name": "feeType",
+                        "indexed": true
+                  }
+            ],
+            "anonymous": false
+      },
+      {
+            "type": "event",
+            "name": "WithdrawUSDC",
+            "inputs": [
+                  {
+                        "type": "address",
+                        "name": "from",
+                        "indexed": true
+                  },
+                  {
+                        "type": "uint256",
+                        "name": "amount",
+                        "indexed": false
+                  },
+                  {
+                        "type": "string",
+                        "name": "targetAccount",
+                        "indexed": false
+                  },
+                  {
+                        "type": "int256",
+                        "name": "chainId",
+                        "indexed": false
+                  },
+                  {
+                        "type": "bytes32",
+                        "name": "feeType",
+                        "indexed": true
+                  }
+            ],
+            "anonymous": false
+      },
+      {
+            "type": "event",
+            "name": "Transfer",
+            "inputs": [
+                  {
+                        "type": "address",
+                        "name": "from",
+                        "indexed": true
+                  },
+                  {
+                        "type": "address",
+                        "name": "to",
+                        "indexed": true
+                  },
+                  {
+                        "type": "uint256",
+                        "name": "value",
+                        "indexed": false
+                  }
+            ],
+            "anonymous": false
+      },
+      {
+            "type": "event",
+            "name": "WithdrawWireUS",
+            "inputs": [
+                  {
+                        "type": "address",
+                        "name": "owner",
+                        "indexed": true
+                  },
+                  {
+                        "type": "uint256",
+                        "name": "amount",
+                        "indexed": false
+                  }
+            ],
+            "anonymous": false
+      },
+      {
+            "type": "event",
+            "name": "WithdrawWireInt",
+            "inputs": [
+                  {
+                        "type": "address",
+                        "name": "owner",
+                        "indexed": true
+                  },
+                  {
+                        "type": "uint256",
+                        "name": "amount",
+                        "indexed": false
+                  }
+            ],
+            "anonymous": false
+      },
+      {
+            "type": "event",
+            "name": "WithdrawAchUS",
+            "inputs": [
+                  {
+                        "type": "address",
+                        "name": "owner",
+                        "indexed": true
+                  },
+                  {
+                        "type": "uint256",
+                        "name": "amount",
+                        "indexed": false
+                  }
+            ],
+            "anonymous": false
+      },
+      {
+            "type": "event",
+            "name": "PercentageFee",
+            "inputs": [
+                  {
+                        "type": "address",
+                        "name": "owner",
+                        "indexed": true
+                  },
+                  {
+                        "type": "uint256",
+                        "name": "amount",
+                        "indexed": false
+                  }
+            ],
+            "anonymous": false
+      },
+      {
+            "type": "event",
+            "name": "WithdrawToUSDC",
+            "inputs": [
+                  {
+                        "type": "address",
+                        "name": "owner",
+                        "indexed": true
+                  },
+                  {
+                        "type": "uint256",
+                        "name": "amount",
+                        "indexed": false
+                  }
+            ],
+            "anonymous": false
+      }
+]
