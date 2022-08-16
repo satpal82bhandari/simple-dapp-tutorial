@@ -1,8 +1,36 @@
-//import ENS, { getEnsAddress } from '@ensdomains/ensjs'
-
 /*global ethereum, MetamaskOnboarding */
 
-// const { ENS, getEnsAddress } = require('@ensdomains/ensjs');
+/*
+The `piggybankContract` is compiled from:
+
+  pragma solidity ^0.4.0;
+  contract PiggyBank {
+
+      uint private balance;
+      address public owner;
+
+      function PiggyBank() public {
+          owner = msg.sender;
+          balance = 0;
+      }
+
+      function deposit() public payable returns (uint) {
+          balance += msg.value;
+          return balance;
+      }
+
+      function withdraw(uint withdrawAmount) public returns (uint remainingBal) {
+          require(msg.sender == owner);
+          balance -= withdrawAmount;
+
+          msg.sender.transfer(withdrawAmount);
+
+          return balance;
+      }
+  }
+*/
+
+
 
 
 const forwarderOrigin = 'http://localhost:3000';
@@ -13,7 +41,6 @@ const initialize = () => {
   const getAccountsButton = document.getElementById('getAccounts');
   const getAccountsResult = document.getElementById('getAccountsResult');
   const withdraw1USDButton = document.getElementById('withdraw1USD');
-  const ensButton = document.getElementById('ens');
 
   //Created check function to see if the MetaMask extension is installed
   const isMetaMaskInstalled = () => {
@@ -74,34 +101,46 @@ const initialize = () => {
     const contractABI = await $.getJSON("./contract-abi.json");
     const contractAddress = "0x0000000000000000000000000000000000002070";
 
-    var web3 = new Web3(window.ethereum);
+    var web3 = new Web3(" https://rpc.tst.publicmint.io:8545/");
 
     const contractRef = new web3.eth.Contract(
       contractABI, contractAddress);
 
-    const estGasFees = await contractRef.methods.withdrawWireInt(web3.utils.toWei("1", "gwei"), web3.utils.sha3('0x3f15742b0c318ada62cd4063aaea5262666154f643150c2c4284ce09861673eb')).estimateGas({ from: window.ethereum.selectedAddress })
-    console.log(`EstGasFees : ${estGasFees}`);
-    const receipt = await contractRef.methods.withdrawWireInt(web3.utils.toWei("1", "gwei"), web3.utils.sha3('0x3f15742b0c318ada62cd4063aaea5262666154f643150c2c4284ce09861673eb'))
-      .send({ from: window.ethereum.selectedAddress, gas: estGasFees });
-    console.log(`Receipt : ${JSON.stringify(receipt)}`);
+
+    const receipt = await contractRef.methods.withdrawWireInt(web3.utils.toWei("1"),
+      '0x0d63f952f267aa920b4b906d0c1821218aa0d1349df07efa2a8039626a8864b8').encodeABI();
+
+    const transaction = {
+
+      from: "0x8F3cEA8ba0201104f3Fb733f50738892129f19e3",
+      to: contractAddress,
+      //'value': 0,
+      gas: estGasFees,
+      //maxFeePerGas: 1000000108,
+      //nonce: nonce,
+      //gasLimit: 70000,
+      data: receipt
+      // optional data field to send message or execute smart contract
+    };
+
+    const walletAccountPrivateKey1 = '8cc14c56d1a8b92424a0d772f2226df9bc86af9670ba7f2ff336443b3f94f63f';
+    web3.eth.accounts.signTransaction(transaction, walletAccountPrivateKey1).then(signed => {
+      var tran = web3.eth.sendSignedTransaction(signed.rawTransaction);
+      tran.on('confirmation', (confirmationNumber, receipt) => {
+        console.log('confirmation: ' + confirmationNumber);
+      });
+
+      tran.on('transactionHash', hash => {
+        console.log('hash');
+        console.log(hash);
+      });
+      tran.on('receipt', receipt => {
+        console.log('reciept');
+        console.log(receipt);
+      });
+      tran.on('error', console.error);
+    });
   });
-
-  ensButton.addEventListener('click', async () => {
-    console.log(`ensButton clicked`);
-    const contractABI = await $.getJSON("./kaledio-contract-abi.json");
-    const contractAddress = "0x3fbb17910fbf8a33a3ad5a6e23daa55a7845d269";
-
-    var web3 = new Web3(window.ethereum);
-
-    const contractRef = new web3.eth.Contract(
-      contractABI, contractAddress);
-
-    const estGasFees = await contractRef.methods.set("1000000100000000").estimateGas({ from: window.ethereum.selectedAddress })
-    console.log(`EstGasFees : ${estGasFees}`);
-    const receipt = await contractRef.methods.set("1000000100000000")
-      .send({ from: window.ethereum.selectedAddress, gas: estGasFees });
-    console.log(`Receipt : ${JSON.stringify(receipt)}`);
-  })
 
   MetaMaskClientCheck();
 }
